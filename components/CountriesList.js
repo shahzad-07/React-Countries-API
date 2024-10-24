@@ -28,18 +28,31 @@ export default function CountriesList({ query, region }) {
     .filter((country) => country.name.common !== "Israel");
 
   return (
-    <div className="countries-container">
-      {filteredCountries.map((country) => (
-        <CountryCard
-          key={country.name.common}
-          name={country.name.common}
-          flag={country.flags.svg}
-          population={country.population}
-          region={country.region}
-          capital={country.capital?.[0]}
-          data={country}
-        />
-      ))}
-    </div>
+    <>
+      <div className="countries-container">
+        {filteredCountries.map((country) => (
+          <CountryCard
+            key={country.name.common}
+            name={country.name.common}
+            flag={country.flags.svg}
+            population={country.population}
+            region={country.region}
+            capital={country.capital?.[0]}
+            data={country}
+          />
+        ))}
+      </div>
+      <div>
+        <p
+          style={{
+            fontSize: "small",
+            textAlign: "center",
+            marginTop: "60px",
+          }}
+        >
+          Made by Shahzad
+        </p>
+      </div>
+    </>
   );
 }
